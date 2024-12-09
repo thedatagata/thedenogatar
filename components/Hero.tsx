@@ -1,43 +1,51 @@
-// components/Hero.tsx
+
 export default function Hero() {
-    return (
-      <div class="relative pt-24 pb-20 bg-gradient-to-r from-green-50 to-green-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="relative">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-              <div class="mt-12 lg:mt-0">
-                <div class="text-center lg:text-left md:max-w-2xl md:mx-auto lg:mx-0">
-                  <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-                    <span class="block">DATA GATA</span>
-                    <span class="block text-gator-green mt-3 text-3xl sm:text-4xl lg:text-3xl xl:text-4xl">
-                    Over the course of millions of years my digestive track has evolved to consume then model raw data.
-                    </span>
-                  </h1>
-                  <div class="mt-10">
-                    <a
-                      href="#contact"
-                      class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gator-green hover:bg-green-700 transition-colors duration-150"
-                    >
-                      Get Started
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-12 lg:mt-0">
-                <div class="flex justify-center lg:justify-start">
-                  <img 
-                    src="/dasgata.jpg" 
-                    alt="Data Gator Logo" 
-                    class="h-64 w-64 object-contain"
-                  />
-                </div>
-                <p class="mt-6 text-base text-gray-600 sm:text-lg md:text-xl">
-                  According to Louisiana Cajun folklore, some areas of the Bayou may be haunted by a "DATA_GATA", an unbaptized, illegitimate child left to die in the swamp. Raised by alligators, it transformed into a half-gator, half-dator monstrosity that survives purely off manipulating execs with data.
+  return (
+    <div class="relative min-h-screen flex items-center bg-gradient-to-br from-[#172217] to-[#186018]">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-[#90C137] opacity-10 mix-blend-multiply"></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div class="space-y-16">
+          <div class="space-y-4">
+            <h1 class="text-8xl font-extrabold text-[#F8F6F0] tracking-tight">
+              DATA_<span class="text-[#90C137]">GATA</span>
+            </h1>
+            <p class="text-lg italic text-[#F8F6F0]/70 max-w-2xl">
+              "Ah you think having a data swamp is unique? You merely implemented a data swamp in pursuit of a single source of truth. I was born in the swamp, molded by it..."
+            </p>
+          </div>
+
+          <div class="space-y-8 max-w-4xl">
+            <h2 class="text-4xl font-bold text-[#90C137]">Legend has it</h2>
+
+            <div class="flex space-x-8 items-start">
+              <img
+                src="water_cooler.png"
+                alt="Watercooler"
+                class="w-64 h-auto object-contain"
+              />
+              <div class="space-y-6">
+                <p class="text-2xl text-[#F8F6F0]/90 font-light leading-relaxed">
+                  According to Silicon Valley folklore, some early stage start-ups have reported to have encountered what can only be described as the "DATA_GATA".
+                </p>
+                <p class="text-2xl text-[#F8F6F0]/90 font-light leading-relaxed">
+                  This creature evolved in an environment where a bootstrapped start-up sold data-products as supported production features to raise capital to build the product angel investors were sold on.
+                </p>
+                <p class="text-2xl text-[#F8F6F0]/90 font-light leading-relaxed">
+                  In this environment, this once ambitious young college dropout evolved into what can only be described as a half datar, half gator monstrosity that survives on leading data teams out of the swamp to the promiseland of a true single source of truth data platform.
                 </p>
               </div>
             </div>
           </div>
+
+          <div class="inline-block border-2 border-[#90C137] rounded-lg p-1 hover:bg-[#90C137]/10 transition-colors">
+            <a href="#contact" class="text-[#F8F6F0] text-lg font-medium px-8 py-3 inline-block">
+              Get Started
+            </a>
+          </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}

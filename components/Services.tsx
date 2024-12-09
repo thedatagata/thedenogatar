@@ -1,62 +1,57 @@
+// components/Services.tsx
 export default function Services() {
-    const services = [
-      {
-        title: "DBT",
-        description: "Expert implementation and optimization of dbt workflows for modern data transformation"
-      },
-      {
-        title: "Snowflake & BigQuery",
-        description: "Cloud data warehouse architecture, optimization, and maintenance"
-      },
-      {
-        title: "Modern Data Stack",
-        description: "End-to-end implementation of modern data infrastructure and pipelines"
-      },
-      {
-        title: "Data Architecture",
-        description: "Designing scalable, maintainable data architectures for growing businesses"
-      },
-      {
-        title: "Product Analytics",
-        description: "Implementing robust analytics solutions for product-led decisions"
-      },
-      {
-        title: "Adobe Experience Platform",
-        description: "Integration and optimization of Adobe's enterprise marketing solutions"
-      },
-      {
-        title: "Lakehouse Architecture",
-        description: "Building flexible, scalable data lakehouses with modern tools"
-      },
-      {
-        title: "Open Source Solutions",
-        description: "DLT, Dagster, Iceberg, and DuckDB implementation for various use cases"
-      }
-    ];
-  
-    return (
-      <section id="services" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900">Our Services</h2>
-            <p class="mt-4 text-xl text-gray-600">
-              Comprehensive data solutions for modern businesses
-            </p>
-          </div>
-  
-          <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                  {service.title}
-                </h3>
-                <p class="text-gray-600">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
+  const solutions = [
+    {
+      title: "Data Platform Development",
+      description: "End-to-end development of modern data platforms"
+    },
+    {
+      title: "Lakehouse Architecture Consulting",
+      description: "Design and implementation of scalable lakehouse architectures"
+    },
+    {
+      title: "Datawarehouse Optimization",
+      description: "Performance tuning and cost optimization of data warehouses"
+    },
+    {
+      title: "Technology Implementation",
+      description: "Implementation support and team training for new data tools"
+    },
+    {
+      title: "Stack Auditing",
+      description: "Comprehensive audit of data and analytics technology stack"
+    },
+    {
+      title: "DBT Best Practices",
+      description: "Implementation of DBT best practices and model optimization"
+    },
+    {
+      title: "Architecture Modernization",
+      description: "Modernizing legacy data architectures for scale"
+    },
+    {
+      title: "Vendor Selection",
+      description: "Agnostic technology recommendations based on your needs"
+    }
+  ];
+ 
+  return (
+    <section id="solutions" class="py-32 bg-[#172217]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-6xl font-bold text-[#F8F6F0] mb-24">Solutions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {solutions.map((solution) => (
+            <div class="group border-t border-[#90C137]/30 pt-8">
+              <h3 class="text-2xl font-light text-[#F8F6F0] group-hover:text-[#90C137] transition-colors mb-4">
+                {solution.title}
+              </h3>
+              <p class="text-[#F8F6F0]/70 font-light">
+                {solution.description}
+              </p>
+            </div>
+          ))}
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+ }

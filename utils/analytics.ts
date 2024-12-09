@@ -4,7 +4,7 @@ interface AnalyticsEvent {
   event_type: string;
   pathname?: string | null;
   referrer?: string | null;
-  userAgent?: string | null;
+  user_agent?: string | null;
   session_id: string;
   anonymous_id: string;
   user_id?: string | null;
