@@ -41,7 +41,11 @@ export default function Services() {
         <h2 class="text-6xl font-bold text-[#F8F6F0] mb-24">Solutions</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {solutions.map((solution) => (
-            <div class="group border-t border-[#90C137]/30 pt-8">
+            <div 
+              class="group border-t border-[#90C137]/30 pt-8"
+              data-element="service-card"
+              data-service={solution.title.toLowerCase().replace(/\s+/g, '-')}
+            >
               <h3 class="text-2xl font-light text-[#F8F6F0] group-hover:text-[#90C137] transition-colors mb-4">
                 {solution.title}
               </h3>

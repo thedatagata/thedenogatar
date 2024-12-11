@@ -1,5 +1,5 @@
-
 export default function Hero() {
+
   return (
     <div class="relative min-h-screen flex items-center bg-gradient-to-br from-[#172217] to-[#186018]">
       <div class="absolute inset-0">
@@ -40,7 +40,11 @@ export default function Hero() {
           </div>
 
           <div class="inline-block border-2 border-[#90C137] rounded-lg p-1 hover:bg-[#90C137]/10 transition-colors">
-            <a href="#contact" class="text-[#F8F6F0] text-lg font-medium px-8 py-3 inline-block">
+            <a
+              href="#contact"
+              class="text-[#F8F6F0] text-lg font-medium px-8 py-3 inline-block"
+              data-element="get-started-cta"
+            >
               Get Started
             </a>
           </div>

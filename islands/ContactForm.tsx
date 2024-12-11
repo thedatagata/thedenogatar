@@ -1,7 +1,7 @@
 
 import { useState } from "preact/hooks";
-import { trackEvent } from "../utils/analytics.ts";
-import { getCookie, setCookie } from "../utils/cookies.ts";
+import { trackClientEvent } from "../utils/analytics.browser.ts";
+import { getCookie } from "../utils/cookies.ts";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -11,49 +11,36 @@ export default function ContactForm() {
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
 
-    // Retrieve required cookies
-    const anonymous_id = getCookie("anonymous_id");
-    const session_id = getCookie("session_id");
-    let user_id = getCookie("user_id");
+    try {  // Added try block here
+      // Retrieve required cookies
+      const anonymous_id = getCookie("anonymous_id");
+      const session_id = getCookie("session_id");
 
-    if (!anonymous_id || !session_id) {
-      console.error("Missing anonymous_id or session_id");
-      return;
-    }
-
-    try {
-      // Only generate and store a new user_id if it doesn't exist
-      if (!user_id) {
-        user_id = crypto.randomUUID();
-        setCookie("user_id", user_id, { path: "/", maxAge: 60 * 60 * 24 * 365 }); // 1 year
+      if (!anonymous_id || !session_id) {
+        console.error("Missing anonymous_id or session_id");
+        return;
       }
 
       // Submit form data to the server-side API
       const response = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ anonymous_id, user_id }),
+        body: JSON.stringify({ anonymous_id, session_id, name, email, message }),
       });
 
       if (!response.ok) {
         throw new Error("Failed to submit form");
       }
 
-      console.log("Form submission recorded on server");
-
-      // Track the successful form submission event
-      const eventPayload = {
+      await trackClientEvent({
         event_type: "form_submission",
-        event_id: crypto.randomUUID(),
+        name,
+        email,
+        message,
         session_id,
         anonymous_id,
-        user_id,
         timestamp: Date.now(),
-      };
-      console.log("Tracking event payload:", eventPayload);
-
-      await trackEvent(eventPayload);
-      console.log("Form submission event tracked successfully");
+      });
 
       // Clear form fields
       setName("");

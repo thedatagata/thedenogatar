@@ -14,7 +14,11 @@
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
-    "$std/": "https://deno.land/std@0.208.0/"
+    "$std/": "https://deno.land/std@0.208.0/",
+    "@aws-sdk/client-secrets-manager": "https://esm.sh/@aws-sdk/client-secrets-manager",
+    "@smithy/signature-v4": "https://esm.sh/@smithy/signature-v4@1.0.0",
+    "@smithy/protocol-http": "https://esm.sh/@smithy/protocol-http@1.0.0",
+    "@aws-crypto/sha256-js": "https://esm.sh/@aws-crypto/sha256-js"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },

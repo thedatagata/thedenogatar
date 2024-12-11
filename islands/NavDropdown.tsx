@@ -50,6 +50,7 @@ export default function NavDropdown() {
          class="text-[#F8F6F0] hover:text-[#90C137] transition-colors flex items-center gap-2"
          onMouseEnter={() => handleMouseEnter('expertise')}
          onMouseLeave={handleMouseLeave}
+         data-element="nav-expertise-dropdown"
        >
          Expertise
          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
@@ -66,6 +67,8 @@ export default function NavDropdown() {
              <a 
                href={`/expertise/${item.toLowerCase().replace(/\s+/g, '-')}`}
                class="block px-4 py-2 text-[#F8F6F0] hover:bg-[#90C137]/10 hover:text-[#90C137] transition-colors"
+               data-element="nav-expertise-item"
+               data-expertise={item}
              >
                {item}
              </a>
@@ -79,6 +82,7 @@ export default function NavDropdown() {
          class="text-[#F8F6F0] hover:text-[#90C137] transition-colors flex items-center gap-2"
          onMouseEnter={() => handleMouseEnter('solutions')}
          onMouseLeave={handleMouseLeave}
+         data-element="nav-solutions-dropdown"
        >
          Solutions
          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
@@ -95,6 +99,8 @@ export default function NavDropdown() {
              <a 
                href={`/solutions/${item.toLowerCase().replace(/\s+/g, '-')}`}
                class="block px-4 py-2 text-[#F8F6F0] hover:bg-[#90C137]/10 hover:text-[#90C137] transition-colors"
+               data-element="nav-solution-item"
+               data-solution={item}
              >
                {item}
              </a>
@@ -108,6 +114,7 @@ export default function NavDropdown() {
          class="text-[#F8F6F0] hover:text-[#90C137] transition-colors flex items-center gap-2"
          onMouseEnter={() => handleMouseEnter('technologies')}
          onMouseLeave={handleMouseLeave}
+         data-element="nav-technologies-dropdown"
        >
          Technologies
          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
@@ -127,6 +134,9 @@ export default function NavDropdown() {
                  <a 
                    href={`/technologies/${item.toLowerCase().replace(/\s+/g, '-')}`}
                    class="block px-8 py-2 text-[#F8F6F0] hover:bg-[#90C137]/10 hover:text-[#90C137] transition-colors"
+                   data-element="nav-technology-item"
+                   data-technology={item}
+                   data-category={category}
                  >
                    {item}
                  </a>
