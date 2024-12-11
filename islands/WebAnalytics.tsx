@@ -37,7 +37,7 @@ export default function WebAnalytics() {
 
       trackClientEvent({
         event_type: "click",
-        data_element: target.getAttribute("data-element"),
+        data_element: target.getAttribute("data-element") || "",
         pathname: globalThis.location.pathname,
         referrer: document.referrer,
         user_agent: navigator.userAgent,
