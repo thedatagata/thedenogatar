@@ -1,7 +1,7 @@
 // components/TechnologiesSection.tsx
 export default function TechnologiesSection() {
   const techCategories = {
-    "Warehouses": [
+    "Compute Engines": [
       "Snowflake",
       "BigQuery", 
       "DuckDB"

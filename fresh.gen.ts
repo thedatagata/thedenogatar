@@ -6,7 +6,9 @@ import * as $_app from "./routes/_app.tsx";
 import * as $api_submit from "./routes/api/submit.ts";
 import * as $api_track from "./routes/api/track.ts";
 import * as $index from "./routes/index.tsx";
+import * as $solutions_data_platform_development from "./routes/solutions/data-platform-development.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
+import * as $Mermaid from "./islands/Mermaid.tsx";
 import * as $NavDropdown from "./islands/NavDropdown.tsx";
 import * as $WebAnalytics from "./islands/WebAnalytics.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -17,9 +19,12 @@ const manifest = {
     "./routes/api/submit.ts": $api_submit,
     "./routes/api/track.ts": $api_track,
     "./routes/index.tsx": $index,
+    "./routes/solutions/data-platform-development.tsx":
+      $solutions_data_platform_development,
   },
   islands: {
     "./islands/ContactForm.tsx": $ContactForm,
+    "./islands/Mermaid.tsx": $Mermaid,
     "./islands/NavDropdown.tsx": $NavDropdown,
     "./islands/WebAnalytics.tsx": $WebAnalytics,
   },
