@@ -2,7 +2,7 @@
 export default function ExpertiseSection() {
   const expertises = [
     {
-      title: "Data Architecture",
+      title: "Data & Data Team Architecture",
       description: "Consulting and implementation of scalable data architectures"
     },
     {

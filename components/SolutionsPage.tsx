@@ -1,6 +1,5 @@
 // components/MarketingPage.tsx
 import { Head } from "$fresh/runtime.ts";
-import Mermaid from "../islands/Mermaid.tsx";
 
 interface ContentSection {
   title: string;
@@ -13,14 +12,14 @@ interface ContentSection {
   diagram?: string;
 }
 
-export interface MarketingPageProps {
+export interface SolutionsPageProps {
   title: string;
   description: string;
   subtitle: string;
   sections: ContentSection[];
 }
 
-export default function MarketingPage({ title, description, subtitle, sections }: MarketingPageProps) {
+export default function SolutionsPage({ title, description, subtitle, sections }: SolutionsPageProps) {
   return (
     <div class="min-h-screen bg-[#3a3c37] text-[#F8F6F0]">
       <Head>
@@ -74,12 +73,6 @@ export default function MarketingPage({ title, description, subtitle, sections }
                       ))}
                     </div>
                   ))}
-                </div>
-              )}
-
-              {section.diagram && (
-                <div class="bg-[#1E2A1E] p-6 rounded-lg mt-4">
-                  <Mermaid chart={section.diagram} />
                 </div>
               )}
             </div>

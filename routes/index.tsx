@@ -6,7 +6,7 @@ import WebAnalytics from "../islands/WebAnalytics.tsx";
 
 import Nav from "../components/Nav.tsx";
 import Hero from "../components/Hero.tsx";
-import Services from "../components/Services.tsx";
+import Solutions from "../components/Solutions.tsx";
 import Technologies from "../components/Technologies.tsx";
 import Expertise from "../components/Expertise.tsx";
 import Contact from "../components/Contact.tsx";
@@ -56,7 +56,7 @@ export default function Home() {
         <WebAnalytics />
         <Nav />
         <Hero />
-        <Services />
+        <Solutions />
         <Expertise />
         <Technologies />
         <Contact />

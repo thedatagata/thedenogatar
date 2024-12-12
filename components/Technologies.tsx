@@ -1,4 +1,3 @@
-// components/TechnologiesSection.tsx
 export default function TechnologiesSection() {
   const techCategories = {
     "Compute Engines": [
@@ -6,7 +5,7 @@ export default function TechnologiesSection() {
       "BigQuery", 
       "DuckDB"
     ],
-    "Data Pipelines": [
+    "Data Orchestration & Transformation": [
       "Dagster",
       "DBT",
       "DLT",
@@ -14,18 +13,33 @@ export default function TechnologiesSection() {
     ],
     "Customer Data Platforms": [
       "Segment",
-      "Adobe Experience Platform",
-      "Growthloop",
-      "Hightouch"
+      "Adobe Experience Platform"
     ],
     "Tagging & Analytics": [
-      "Amplitude",
-      "Heap",
       "Metarouter",
       "PostHog",
-      "Plausible",
-      "GA4",
-      "GTM"
+      "Plausible"
+    ], 
+    "Data Quality": [
+      "Great Expectations",
+      "Soda.io"
+    ], 
+    "Data Frame Libraries": [
+      "Pandas",
+      "Polars"
+    ], 
+    "Table Formats":[
+      "Iceberg",
+      "Delta Lake"
+    ], 
+    "Data Integration": [
+      "DLT",
+      "Airbyte",
+      "Pipedream",
+    ], 
+    "Data Messaging Queues": [
+      "Rudderstack",
+      "Snowplow"
     ]
   };
  
