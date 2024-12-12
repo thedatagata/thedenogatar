@@ -6,10 +6,11 @@ import WebAnalytics from "../islands/WebAnalytics.tsx";
 
 import Nav from "../components/Nav.tsx";
 import Hero from "../components/Hero.tsx";
-import Solutions from "../components/Solutions.tsx";
-import Technologies from "../components/Technologies.tsx";
-import Expertise from "../components/Expertise.tsx";
+import Solutions from "../components/SolutionsSection.tsx";
+import Technologies from "../components/TechnologiesSection.tsx";
+import Expertise from "../components/ExpertiseSection.tsx";
 import Contact from "../components/Contact.tsx";
+import Footer from "../components/Footer.tsx";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
@@ -60,6 +61,7 @@ export default function Home() {
         <Expertise />
         <Technologies />
         <Contact />
+        <Footer />
       </div>
     </>
   );

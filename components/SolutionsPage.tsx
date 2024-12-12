@@ -21,63 +21,48 @@ export interface SolutionsPageProps {
 
 export default function SolutionsPage({ title, description, subtitle, sections }: SolutionsPageProps) {
   return (
-    <div class="min-h-screen bg-[#3a3c37] text-[#F8F6F0]">
+    <div class="min-h-screen bg-[#172217]">
       <Head>
-        <title>{title} | Your Company Name</title>
+        <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
 
-      <div class="max-w-6xl mx-auto px-4 py-12">
-        <div class="space-y-12">
-          <div class="text-center space-y-4">
-            <h1 class="text-4xl font-bold">{title}</h1>
-            <p class="text-xl opacity-80">{subtitle}</p>
-          </div>
+      <div class="max-w-7xl mx-auto px-4 py-24">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <h1 class="text-6xl font-bold text-[#F8F6F0] mb-6">{title}</h1>
+          <p class="text-2xl font-light text-[#90C137] mb-8">{subtitle}</p>
+          <p class="text-xl text-[#F8F6F0]/80">{description}</p>
+        </div>
 
-          {sections.map((section, idx) => (
-            <div key={idx} class="bg-[#172217] border border-[#F8F6F0]/20 rounded-lg p-6">
-              <h2 class="text-2xl text-[#6bb869] mb-6">{section.title}</h2>
-              
-              {section.subsections && (
-                <div class="grid gap-6">
-                  {section.subsections.map((sub, subIdx) => (
-                    <div key={subIdx} class="space-y-2">
-                      <h3 class="text-xl font-semibold">{sub.title}</h3>
-                      <p class="opacity-80">{sub.content}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {section.bullets && (
-                <ul class="grid gap-3">
-                  {section.bullets.map((item, itemIdx) => (
-                    <li key={itemIdx} class="flex items-start gap-3">
-                      <span class="text-[#6bb869]">•</span>
-                      <span>{item}</span>
+        {sections.map((section, idx) => (
+          <div key={idx} class="mb-20">
+            <h2 class="text-3xl font-bold text-[#90C137] mb-12">{section.title}</h2>
+            
+            {section.subsections && (
+              <div class="grid md:grid-cols-3 gap-8 mb-12">
+                {section.subsections.map((subsection, subIdx) => (
+                  <div key={subIdx} class="bg-[#F8F6F0]/5 backdrop-blur-sm rounded-lg p-8">
+                    <h3 class="text-xl font-semibold text-[#90C137] mb-4">{subsection.title}</h3>
+                    <p class="text-[#F8F6F0]/80">{subsection.content}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {section.bullets && (
+              <div class="bg-[#F8F6F0]/5 backdrop-blur-sm rounded-lg p-8">
+                <ul class="grid md:grid-cols-2 gap-4">
+                  {section.bullets.map((bullet, bulletIdx) => (
+                    <li key={bulletIdx} class="flex items-start gap-4">
+                      <span class="text-[#90C137]">•</span>
+                      <span class="text-[#F8F6F0]/80">{bullet}</span>
                     </li>
                   ))}
                 </ul>
-              )}
-
-              {section.splitSections && (
-                <div class="grid md:grid-cols-2 gap-6">
-                  {Object.entries(section.splitSections).map(([side, content], sideIdx) => (
-                    <div key={sideIdx} class="space-y-4">
-                      <h3 class="text-2xl text-[#6bb869]">{content.title}</h3>
-                      {content.items.map((item, itemIdx) => (
-                        <div key={itemIdx} class="space-y-2">
-                          <h4 class="text-lg font-semibold">{item.title}</h4>
-                          <p class="opacity-80">{item.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
