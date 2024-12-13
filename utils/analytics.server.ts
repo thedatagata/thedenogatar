@@ -53,7 +53,7 @@ async function getAWSCredentials(): Promise<AWSCredentials> {
 
 async function sendLambdaRequest(event: AnalyticsEvent) {
   const credentials = await getAWSCredentials();
-  const ANALYTICS_URL = new URL("https://1tmeqd63r4.execute-api.us-east-1.amazonaws.com/gatar_stage/gatar-event-consumer");
+  const ANALYTICS_URL = new URL("Deno.env.get('LAMBDA_FUNCTION_URL");
 
   const request = new HttpRequest({
     method: "POST",
