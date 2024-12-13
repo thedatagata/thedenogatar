@@ -20,57 +20,58 @@ export interface ExpertisePageProps {
 
 export default function ExpertisePage({ title, description, subtitle, sections }: ExpertisePageProps) {
   return (
-    <div class="min-h-screen bg-[#172217]">
+    <div class="min-h-screen bg-white text-gray-800">
       <Head>
-        <title>{title}</title>
+        <title>{title} | Your Company Name</title>
         <meta name="description" content={description} />
       </Head>
 
-      <div class="max-w-4xl mx-auto px-4 py-24">
-        <article class="space-y-16">
-          <header class="text-center space-y-6">
-            <h1 class="text-6xl font-bold text-[#F8F6F0]">{title}</h1>
-            <p class="text-2xl font-light text-[#90C137]">{subtitle}</p>
-            <p class="text-xl text-[#F8F6F0]/80">{description}</p>
-          </header>
+      <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="space-y-12">
+          <div class="text-center space-y-4">
+            <h1 class="text-4xl font-bold text-blue-600">{title}</h1>
+            <p class="text-xl text-gray-600">{subtitle}</p>
+          </div>
 
           {sections.map((section, idx) => (
-            <section key={idx} class="space-y-8">
-              <h2 class="text-3xl font-semibold text-[#90C137]">{section.topic}</h2>
+            <div key={idx} class="bg-white shadow-lg rounded-lg p-6">
+              <h2 class="text-2xl font-semibold text-blue-600 mb-4">{section.topic}</h2>
               
-              <div class="prose prose-invert prose-green max-w-none">
-                <p class="text-lg text-[#F8F6F0]/80">{section.description}</p>
+              <div class="space-y-6">
+                <p class="text-gray-700">{section.description}</p>
                 
-                <div class="bg-[#F8F6F0]/5 backdrop-blur-sm rounded-lg p-8 my-8">
-                  <h3 class="text-2xl font-medium text-[#90C137] mb-4">Why It Matters</h3>
-                  <p class="text-[#F8F6F0]/90">{section.importance}</p>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Importance to Business</h3>
+                  <p class="text-gray-700">{section.importance}</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 class="text-xl font-medium text-[#90C137] mb-4">Our Approach</h3>
-                    <p class="text-[#F8F6F0]/80">{section.approach}</p>
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-medium text-[#90C137] mb-4">Our Philosophy</h3>
-                    <p class="text-[#F8F6F0]/80">{section.philosophy}</p>
-                  </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Data Maturity Curve</h3>
+                  <p class="text-gray-700">{section.maturityCurve}</p>
                 </div>
 
-                <div class="mt-12">
-                  <h3 class="text-2xl font-medium text-[#90C137] mb-6">Success Stories</h3>
-                  <div class="grid gap-4">
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Our Approach</h3>
+                  <p class="text-gray-700">{section.approach}</p>
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Our Philosophy</h3>
+                  <p class="text-gray-700">{section.philosophy}</p>
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Stories</h3>
+                  <ul class="list-disc list-inside space-y-2">
                     {section.stories.map((story, storyIdx) => (
-                      <div key={storyIdx} class="bg-[#F8F6F0]/5 backdrop-blur-sm rounded-lg p-6">
-                        <p class="text-[#F8F6F0]/90">{story}</p>
-                      </div>
+                      <li key={storyIdx} class="text-gray-700">{story}</li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
-            </section>
+            </div>
           ))}
-        </article>
+        </div>
       </div>
     </div>
   );
