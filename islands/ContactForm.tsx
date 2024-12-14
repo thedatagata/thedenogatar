@@ -1,6 +1,5 @@
 
 import { useState } from "preact/hooks";
-import { trackClientEvent } from "../utils/analytics.browser.ts";
 import { getCookie } from "../utils/cookies.ts";
 
 export default function ContactForm() {
@@ -31,16 +30,6 @@ export default function ContactForm() {
       if (!response.ok) {
         throw new Error("Failed to submit form");
       }
-
-      await trackClientEvent({
-        event_type: "form_submission",
-        name,
-        email,
-        message,
-        session_id,
-        anonymous_id,
-        timestamp: Date.now(),
-      });
 
       // Clear form fields
       setName("");

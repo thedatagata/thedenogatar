@@ -3,37 +3,27 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $_app from "./routes/_app.tsx";
-import * as $api_register from "./routes/api/register.ts";
 import * as $api_submit from "./routes/api/submit.ts";
-import * as $api_track from "./routes/api/track.ts";
 import * as $expertise_slug_ from "./routes/expertise/[slug].tsx";
 import * as $index from "./routes/index.tsx";
-import * as $register_register from "./routes/register/register.tsx";
 import * as $solutions_slug_ from "./routes/solutions/[slug].tsx";
 import * as $technologies_slug_ from "./routes/technologies/[slug].tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $NavDropdown from "./islands/NavDropdown.tsx";
-import * as $RegisterForm from "./islands/RegisterForm.tsx";
-import * as $WebAnalytics from "./islands/WebAnalytics.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_app.tsx": $_app,
-    "./routes/api/register.ts": $api_register,
     "./routes/api/submit.ts": $api_submit,
-    "./routes/api/track.ts": $api_track,
     "./routes/expertise/[slug].tsx": $expertise_slug_,
     "./routes/index.tsx": $index,
-    "./routes/register/register.tsx": $register_register,
     "./routes/solutions/[slug].tsx": $solutions_slug_,
     "./routes/technologies/[slug].tsx": $technologies_slug_,
   },
   islands: {
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/NavDropdown.tsx": $NavDropdown,
-    "./islands/RegisterForm.tsx": $RegisterForm,
-    "./islands/WebAnalytics.tsx": $WebAnalytics,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

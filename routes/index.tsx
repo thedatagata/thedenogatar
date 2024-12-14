@@ -2,7 +2,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers } from "$fresh/server.ts";
 import { getCookies, setCookie } from "https://deno.land/std@0.208.0/http/cookie.ts";
-import WebAnalytics from "../islands/WebAnalytics.tsx";
 
 import Nav from "../components/Nav.tsx";
 import Hero from "../components/Hero.tsx";
@@ -10,6 +9,7 @@ import Solutions from "../components/Solutions.tsx";
 import Technologies from "../components/Technologies.tsx";
 import Expertise from "../components/Expertise.tsx";
 import Contact from "../components/Contact.tsx";
+import Footer from "../components/Footer.tsx";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
@@ -50,16 +50,15 @@ export default function Home() {
     <>
       <Head>
         <title>DATA_GATA - Modern Data Stack Solutions</title>
-        <link rel="stylesheet" href="/main.css" />
       </Head>
       <div class="min-h-screen bg-[#F8F6F0]">
-        <WebAnalytics />
         <Nav />
         <Hero />
         <Solutions />
         <Expertise />
         <Technologies />
         <Contact />
+        <Footer />
       </div>
     </>
   );

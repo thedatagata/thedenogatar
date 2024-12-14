@@ -1,9 +1,10 @@
 {
   "tasks": {
-    "start": "deno run --allow-read --allow-write --allow-net --allow-env --allow-run --unstable-kv main.ts",
-    "build": "deno run -A dev.ts build",
-    "preview": "deno run -A main.ts"
+    "start": "deno run --allow-read --allow-write --allow-net --allow-env --allow-run --unstable-kv --watch=static/,routes/ main.ts",
+    "build": "deno run --allow-read --allow-write --allow-net --allow-env --allow-run --unstable-kv dev.ts build",
+    "preview": "deno run --allow-read --allow-write --allow-net --allow-env --unstable-kv main.ts"
   },
+  "nodeModulesDir":"auto",
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "preact": "https://esm.sh/preact@10.22.0",
@@ -12,15 +13,8 @@
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "tailwindcss": "npm:tailwindcss@3.4.1",
-    "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-    "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
-    "twind": "https://esm.sh/twind@0.16.19",
-    "twind/": "https://esm.sh/twind@0.16.19/",
     "$std/": "https://deno.land/std@0.208.0/",
-    "@aws-sdk/client-secrets-manager": "https://esm.sh/@aws-sdk/client-secrets-manager",
-    "@smithy/signature-v4": "https://esm.sh/@smithy/signature-v4@1.0.0",
-    "@smithy/protocol-http": "https://esm.sh/@smithy/protocol-http@1.0.0",
-    "@aws-crypto/sha256-js": "https://esm.sh/@aws-crypto/sha256-js"
+    "@snowplow/node-tracker": "npm:@snowplow/node-tracker"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
