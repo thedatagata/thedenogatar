@@ -1,6 +1,8 @@
-import { PageProps } from "$fresh/server.ts";
+import { PageProps, FreshContext } from "$fresh/server.ts";
 import { ExpertisePageProps } from "../../components/ExpertisePage.tsx";
 import ExpertisePage from "../../components/ExpertisePage.tsx";
+import { trackPageView } from "../../utils/analytics.server.ts";
+import { getCookies } from "https://deno.land/std@0.208.0/http/cookie.ts";
 
 const expertiseContent: Record<string, ExpertisePageProps> = {
     "data-architecture-consulting-implementation": {
@@ -156,6 +158,20 @@ const expertiseContent: Record<string, ExpertisePageProps> = {
       ]
     }
   };
+
+export async function handler(req: Request, ctx: FreshContext) {
+  const { slug } = ctx.params;
+  if (typeof slug !== "string" || !(slug in expertiseContent)) {
+    return new Response("Expertise not found", { status: 404 });
+  }
+  await trackPageView(req, ctx, {
+    pathParams: {
+      slug
+    }
+  });
+
+  return ctx.render();
+}
 
 export default function ExpertiseRoute({ params }: PageProps) {
 const { slug } = params as { slug: string };

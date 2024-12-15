@@ -1,7 +1,8 @@
 // routes/technologies/[slug].tsx
-import { PageProps } from "$fresh/server.ts";
+import { PageProps, FreshContext } from "$fresh/server.ts";
 import { TechnologyPageProps } from "../../components/TechnologyPage.tsx";
 import TechnologyPage from "../../components/TechnologyPage.tsx";
+import { trackPageView } from "../../utils/analytics.server.ts";
 
 const technologies = [
     {
@@ -229,6 +230,18 @@ const technologies = [
       ],
     }
   ]
+
+  export async function handler(req: Request, ctx: FreshContext) {
+    const { slug } = ctx.params;
+  
+    await trackPageView(req, ctx, {
+      pathParams: {
+        slug
+      }
+    });
+  
+    return ctx.render();
+  }
 
   export default function TechnologiesRoute({ params }: PageProps) {
     const { slug } = params as { slug: string };

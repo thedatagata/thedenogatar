@@ -1,7 +1,8 @@
 // routes/solutions/[slug].tsx
-import { PageProps } from "$fresh/server.ts";
+import { PageProps, FreshContext } from "$fresh/server.ts";
 import {SolutionsPageProps} from "../../components/SolutionsPage.tsx";
 import SolutionsPage from "../../components/SolutionsPage.tsx";
+import { trackPageView } from "../../utils/analytics.server.ts";
 
 
 const solutionsContent: Record<string, SolutionsPageProps> = {
@@ -83,6 +84,19 @@ const solutionsContent: Record<string, SolutionsPageProps> = {
     ]
   }
 };
+
+export async function handler(req: Request, ctx: FreshContext) {
+  const { slug } = ctx.params;
+
+  await trackPageView(req, ctx, {
+    pathParams: {
+      slug
+    }
+  });
+
+  return ctx.render();
+}
+
 
 export default function SolutionsRoute({ params }: PageProps) {
   const { slug } = params as { slug: string };
