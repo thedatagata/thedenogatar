@@ -1,7 +1,7 @@
 // utils/analytics.server.ts
 
 import { getCookies } from "https://deno.land/std@0.208.0/http/cookie.ts";
-import { getOrCreateUser } from "./db.ts";
+import { getOrCreateUser } from "./db/kv.ts";
 
 interface TrackingMetadata {
     pathParams?: Record<string, string>;

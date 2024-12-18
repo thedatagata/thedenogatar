@@ -2,7 +2,7 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers } from "$fresh/server.ts";
 import { getCookies, setCookie } from "https://deno.land/std@0.208.0/http/cookie.ts";
-import { recordSession } from "../utils/db.ts";
+import { recordSession } from "../utils/db/kv.ts";
 
 import Nav from "../components/Nav.tsx";
 import Hero from "../components/Hero.tsx";

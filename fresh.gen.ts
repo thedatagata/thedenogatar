@@ -4,24 +4,32 @@
 
 import * as $_app from "./routes/_app.tsx";
 import * as $api_track from "./routes/api/track.ts";
+import * as $api_users from "./routes/api/users.ts";
 import * as $expertise_slug_ from "./routes/expertise/[slug].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $solutions_slug_ from "./routes/solutions/[slug].tsx";
 import * as $technologies_slug_ from "./routes/technologies/[slug].tsx";
+import * as $users_Account from "./routes/users/Account.tsx";
 import * as $NavDropdown from "./islands/NavDropdown.tsx";
+import * as $ProfileDropdown from "./islands/ProfileDropdown.tsx";
+import * as $UserForm from "./islands/UserForm.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_app.tsx": $_app,
     "./routes/api/track.ts": $api_track,
+    "./routes/api/users.ts": $api_users,
     "./routes/expertise/[slug].tsx": $expertise_slug_,
     "./routes/index.tsx": $index,
     "./routes/solutions/[slug].tsx": $solutions_slug_,
     "./routes/technologies/[slug].tsx": $technologies_slug_,
+    "./routes/users/Account.tsx": $users_Account,
   },
   islands: {
     "./islands/NavDropdown.tsx": $NavDropdown,
+    "./islands/ProfileDropdown.tsx": $ProfileDropdown,
+    "./islands/UserForm.tsx": $UserForm,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
